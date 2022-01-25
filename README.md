@@ -11,4 +11,7 @@ best starting point for understanding the DividendCalendar script.
 OAuth 2.0 credentials must be used to create/delete calendar entries. These credentials (OAuth 
 Client ID) are generated in the [Google Cloud Platform](https://console.cloud.google.com) console. 
 A key limitation with the free tier is that the credentials lifetime is only 7 days. so manual token generation is needed. 
+The *proc_creds* function expects the credentials to be stored as "credentials.json" in the common directory. The 
+variable *cal_id* stores the Google calendar ID, which the user must add in the *main()* function. 
+Finally the variable list *symlist* should be modified to include the ticker symbols of interest.
 

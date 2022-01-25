@@ -8,6 +8,7 @@ from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 import yfinance as yf
 import numpy as np
+import json
 
 def check_filter_symlist(input_list):    
     """Check if list of ticker symbols (function argument) is empty, if the list" 
@@ -81,7 +82,7 @@ def proc_creds(SCOPES):
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'JUL29_credentials.json', SCOPES)
+                'credentials.json', SCOPES)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
         with open('token.json', 'w') as token:
@@ -199,7 +200,7 @@ def main():
 
     service = build('calendar', 'v3', credentials=creds)
     
-    cal_id='ab5r7tfq9qg0u36o2ar42mt0gg@group.calendar.google.com'
+    cal_id='xxxyyyzzz123123abcabc@group.calendar.google.com'
 
     # delete existing events
     del_events(cal_id,service) 
